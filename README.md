@@ -9,6 +9,8 @@
 
 ## Overview
 
+
+
 In this lab, we're going to use ActiveAdmin to add administrative
 features to the song library so that we can control access and prevent
 non-admins from adding and editing songs and artists.
