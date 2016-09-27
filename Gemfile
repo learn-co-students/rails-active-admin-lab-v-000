@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -18,4 +19,3 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
