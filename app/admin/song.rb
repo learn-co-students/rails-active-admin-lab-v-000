@@ -13,16 +13,6 @@ ActiveAdmin.register Song do
 #   permitted
 # end
 
-permit_params :title, :artist_name
-actions :all
-
-form do |f|
-  inputs 'Author' do
-    f.input :title
-    f.input :artist_name
-  end
-  f.semantic_errors
-  f.actions
-end
+permit_params :title, :artist_id
 
 end
