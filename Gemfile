@@ -8,6 +8,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
+
+gem 'jquery-ui-rails', '~> 4.2.1'
 
 group :development, :test do
   gem 'pry'
