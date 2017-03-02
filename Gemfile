@@ -8,6 +8,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'devise'
+gem 'rake', '11.3.0'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem 'pry'
