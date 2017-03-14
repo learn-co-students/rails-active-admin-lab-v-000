@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'devise'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 
 group :development, :test do
   gem 'pry'
