@@ -13,9 +13,9 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'activeadmin', github: 'activeadmin'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
