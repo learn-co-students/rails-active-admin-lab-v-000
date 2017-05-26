@@ -1,6 +1,6 @@
 ActiveAdmin.register Artist do
   permit_params :name
-    actions :all, except: [:create, :edit, :destroy]
+  actions :all, except: [:destroy]
 
     form do |f|
       inputs 'Artist' do

@@ -1,6 +1,5 @@
 ActiveAdmin.register Song do
   permit_params :title, :artist_name
-    actions :all, except: [:create, :edit, :destroy]
 
     form do |f|
       inputs 'Song' do
