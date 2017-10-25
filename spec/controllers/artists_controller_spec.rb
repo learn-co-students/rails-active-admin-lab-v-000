@@ -1,4 +1,4 @@
-require 'rails_helper'
+ require 'rails_helper'
 
 RSpec.describe ArtistsController do
   it { should_not respond_to :update }
