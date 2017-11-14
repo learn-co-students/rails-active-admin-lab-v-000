@@ -12,4 +12,5 @@ ActiveAdmin.register Artist do
 #   permitted
 # end
     actions :all, except: [:destroy]
+    permit_params :name
 end
