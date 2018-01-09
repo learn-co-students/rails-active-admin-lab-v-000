@@ -8,6 +8,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
+gem 'jquery-rails', '>= 4.2.0'
 
 group :development, :test do
   gem 'pry'
@@ -18,4 +20,3 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
