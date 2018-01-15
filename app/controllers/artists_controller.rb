@@ -4,7 +4,8 @@ class ArtistsController < ApplicationController
 
   def show
   end
-
+  
+=begin 
   def new
     @artist = Artist.new
   end
@@ -22,7 +23,8 @@ class ArtistsController < ApplicationController
   def edit
     @artist = Artist.find(params[:id])
   end
-
+  
+=begin
   def update
     @artist = Artist.find(params[:id])
 
@@ -35,12 +37,14 @@ class ArtistsController < ApplicationController
     end
   end
 
+
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
     flash[:notice] = "Artist deleted."
     redirect_to artists_path
   end
+=end
 
   private
 
