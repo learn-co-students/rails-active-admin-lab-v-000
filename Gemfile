@@ -9,6 +9,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'devise'
 
+#Add gem active admin
+gem 'activeadmin'
+
 group :development, :test do
   gem 'pry'
   gem 'capybara'
