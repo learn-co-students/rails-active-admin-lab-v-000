@@ -2581,3 +2581,940 @@ Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.9ms)
 
 
 Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-08 10:45:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 1]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 5]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 7]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 4]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "The Killers"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "The Killers"], ["created_at", "2018-03-06 00:53:07.066147"], ["updated_at", "2018-03-06 00:53:07.066147"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 5], ["title", "Mr. Brightside"], ["created_at", "2018-03-06 00:53:07.072611"], ["updated_at", "2018-03-06 00:53:07.072611"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "The Killers"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 5], ["title", "Jenny Was a Friend of Mine"], ["created_at", "2018-03-06 00:53:07.074687"], ["updated_at", "2018-03-06 00:53:07.074687"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Tommy Tutone"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tommy Tutone"], ["created_at", "2018-03-06 00:53:07.076319"], ["updated_at", "2018-03-06 00:53:07.076319"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 6], ["title", "Jenny"], ["created_at", "2018-03-06 00:53:07.077725"], ["updated_at", "2018-03-06 00:53:07.077725"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Daft Punk"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Daft Punk"], ["created_at", "2018-03-06 00:53:07.079385"], ["updated_at", "2018-03-06 00:53:07.079385"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 7], ["title", "Around the World"], ["created_at", "2018-03-06 00:53:07.080798"], ["updated_at", "2018-03-06 00:53:07.080798"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Daft Punk"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 7], ["title", "Harder, Better, Faster, Stronger"], ["created_at", "2018-03-06 00:53:07.082494"], ["updated_at", "2018-03-06 00:53:07.082494"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Pixies"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pixies"], ["created_at", "2018-03-06 00:53:07.084220"], ["updated_at", "2018-03-06 00:53:07.084220"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 8], ["title", "Where is My Mind?"], ["created_at", "2018-03-06 00:53:07.085547"], ["updated_at", "2018-03-06 00:53:07.085547"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Pixies"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 8], ["title", "Gigantic"], ["created_at", "2018-03-06 00:53:07.087230"], ["updated_at", "2018-03-06 00:53:07.087230"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Pixies"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 8], ["title", "Monkey Gone to Heaven"], ["created_at", "2018-03-06 00:53:07.088876"], ["updated_at", "2018-03-06 00:53:07.088876"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateAdminUsers (20180306005357)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "admin_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180306005357"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateActiveAdminComments (20180306005359)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_id" integer, "resource_type" varchar, "author_id" integer, "author_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180306005359"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_resource_type_and_resource_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_resource_type_and_resource_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admin_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admin_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 9]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 11]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 13]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 15]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 6]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 8]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "The Killers"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "The Killers"], ["created_at", "2018-03-06 00:54:19.512645"], ["updated_at", "2018-03-06 00:54:19.512645"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 9], ["title", "Mr. Brightside"], ["created_at", "2018-03-06 00:54:19.517892"], ["updated_at", "2018-03-06 00:54:19.517892"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "The Killers"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 9], ["title", "Jenny Was a Friend of Mine"], ["created_at", "2018-03-06 00:54:19.520017"], ["updated_at", "2018-03-06 00:54:19.520017"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Tommy Tutone"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tommy Tutone"], ["created_at", "2018-03-06 00:54:19.521601"], ["updated_at", "2018-03-06 00:54:19.521601"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 10], ["title", "Jenny"], ["created_at", "2018-03-06 00:54:19.522878"], ["updated_at", "2018-03-06 00:54:19.522878"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Daft Punk"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Daft Punk"], ["created_at", "2018-03-06 00:54:19.524463"], ["updated_at", "2018-03-06 00:54:19.524463"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 11], ["title", "Around the World"], ["created_at", "2018-03-06 00:54:19.525760"], ["updated_at", "2018-03-06 00:54:19.525760"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Daft Punk"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 11], ["title", "Harder, Better, Faster, Stronger"], ["created_at", "2018-03-06 00:54:19.527422"], ["updated_at", "2018-03-06 00:54:19.527422"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Pixies"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pixies"], ["created_at", "2018-03-06 00:54:19.529006"], ["updated_at", "2018-03-06 00:54:19.529006"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 12], ["title", "Where is My Mind?"], ["created_at", "2018-03-06 00:54:19.530369"], ["updated_at", "2018-03-06 00:54:19.530369"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Pixies"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 12], ["title", "Gigantic"], ["created_at", "2018-03-06 00:54:19.532016"], ["updated_at", "2018-03-06 00:54:19.532016"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Pixies"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 12], ["title", "Monkey Gone to Heaven"], ["created_at", "2018-03-06 00:54:19.533626"], ["updated_at", "2018-03-06 00:54:19.533626"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAdminUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = 'admin@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "admin@example.com"], ["encrypted_password", "$2a$10$KYHu5i6VpOe/gbaEm.jLr.eF0d8YFxRxXUyd/IKnf/hrdHeBojqLW"], ["created_at", "2018-03-06 00:54:19.609806"], ["updated_at", "2018-03-06 00:54:19.609806"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/admin/authors/4/edit" for ::1 at 2018-03-05 19:54:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/admin/authors/4/edit"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/2.5.0/webrick/httpserver.rb:140:in `service'
+  /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/2.5.0/webrick/httpserver.rb:96:in `run'
+  /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/2.5.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.6ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (109.7ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.9ms)
+
+
+Started GET "/admin" for ::1 at 2018-03-05 19:54:36 -0500
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for ::1 at 2018-03-05 19:54:36 -0500
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/devise/shared/_links.erb (0.8ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (31.6ms)
+Completed 200 OK in 8857ms (Views: 8838.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/login" for ::1 at 2018-03-05 19:55:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/devise/shared/_links.erb (2.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (64.9ms)
+Completed 200 OK in 415ms (Views: 393.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/login" for ::1 at 2018-03-05 19:56:11 -0500
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQKTIb/vNu1JcDXWNjU2nr18J08GFVAw4ZVD09FD6Jj1hIbsRWZzhWQkN/wjDa4WaYgXAQm35u9BIKxKp2pQcg==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["email", "admin@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "admin_users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?  [["last_sign_in_at", "2018-03-06 00:56:11.980883"], ["current_sign_in_at", "2018-03-06 00:56:11.980883"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2018-03-06 00:56:11.981867"], ["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 94ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/admin" for ::1 at 2018-03-05 19:56:12 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/page/index.html.arb (93.3ms)
+Completed 200 OK in 101ms (Views: 97.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2018-03-05 19:56:16 -0500
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (132.6ms)
+Completed 200 OK in 146ms (Views: 140.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2018-03-05 19:56:18 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/page/index.html.arb (68.6ms)
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2018-03-05 19:57:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/page/index.html.arb (337.5ms)
+Completed 200 OK in 371ms (Views: 348.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/songs" for ::1 at 2018-03-05 19:57:20 -0500
+Processing by Admin::SongsController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (188.5ms)
+Completed 200 OK in 203ms (Views: 197.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/songs" for ::1 at 2018-03-05 19:58:36 -0500
+Processing by Admin::SongsController#index as HTML
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (110.6ms)
+Completed 200 OK in 134ms (Views: 118.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/songs" for ::1 at 2018-03-05 20:00:12 -0500
+Processing by Admin::SongsController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (112.6ms)
+Completed 200 OK in 140ms (Views: 120.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/songs/24/edit" for ::1 at 2018-03-05 20:00:19 -0500
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 24]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (81.1ms)
+Completed 200 OK in 89ms (Views: 86.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/songs/24/edit" for ::1 at 2018-03-05 20:00:42 -0500
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 24]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (99.8ms)
+Completed 200 OK in 125ms (Views: 108.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/songs/24/edit" for ::1 at 2018-03-05 20:00:47 -0500
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 24]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (75.4ms)
+Completed 200 OK in 83ms (Views: 81.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/songs/24/edit" for ::1 at 2018-03-05 20:01:03 -0500
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 24]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (89.7ms)
+Completed 200 OK in 119ms (Views: 98.2ms | ActiveRecord: 1.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 17]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 19]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 21]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 22]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 23]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 24]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 10]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 12]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "The Killers"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "The Killers"], ["created_at", "2018-03-06 01:02:19.385404"], ["updated_at", "2018-03-06 01:02:19.385404"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 13], ["title", "Mr. Brightside"], ["created_at", "2018-03-06 01:02:19.390317"], ["updated_at", "2018-03-06 01:02:19.390317"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "The Killers"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 13], ["title", "Jenny Was a Friend of Mine"], ["created_at", "2018-03-06 01:02:19.392277"], ["updated_at", "2018-03-06 01:02:19.392277"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Tommy Tutone"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tommy Tutone"], ["created_at", "2018-03-06 01:02:19.393871"], ["updated_at", "2018-03-06 01:02:19.393871"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 14], ["title", "Jenny"], ["created_at", "2018-03-06 01:02:19.395192"], ["updated_at", "2018-03-06 01:02:19.395192"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Daft Punk"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Daft Punk"], ["created_at", "2018-03-06 01:02:19.396899"], ["updated_at", "2018-03-06 01:02:19.396899"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 15], ["title", "Around the World"], ["created_at", "2018-03-06 01:02:19.398235"], ["updated_at", "2018-03-06 01:02:19.398235"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Daft Punk"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 15], ["title", "Harder, Better, Faster, Stronger"], ["created_at", "2018-03-06 01:02:19.399998"], ["updated_at", "2018-03-06 01:02:19.399998"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Pixies"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pixies"], ["created_at", "2018-03-06 01:02:19.401641"], ["updated_at", "2018-03-06 01:02:19.401641"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 16], ["title", "Where is My Mind?"], ["created_at", "2018-03-06 01:02:19.403015"], ["updated_at", "2018-03-06 01:02:19.403015"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Pixies"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 16], ["title", "Gigantic"], ["created_at", "2018-03-06 01:02:19.404650"], ["updated_at", "2018-03-06 01:02:19.404650"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Pixies"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 16], ["title", "Monkey Gone to Heaven"], ["created_at", "2018-03-06 01:02:19.406218"], ["updated_at", "2018-03-06 01:02:19.406218"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAdminUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = 'admin@example.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+
+
+Started GET "/admin/songs" for ::1 at 2018-03-05 20:56:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::SongsController#index as HTML
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (489.1ms)
+Completed 200 OK in 544ms (Views: 502.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/artists" for ::1 at 2018-03-05 20:56:08 -0500
+Processing by Admin::ArtistsController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists"  ORDER BY "artists"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (110.8ms)
+Completed 200 OK in 122ms (Views: 119.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/artists" for ::1 at 2018-03-05 20:57:05 -0500
+Processing by Admin::ArtistsController#index as HTML
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists"  ORDER BY "artists"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mSong Load (0.3ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (106.5ms)
+Completed 200 OK in 136ms (Views: 113.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/artists?order=name_desc" for ::1 at 2018-03-05 20:57:07 -0500
+Processing by Admin::ArtistsController#index as HTML
+  Parameters: {"order"=>"name_desc"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "artists" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists"  ORDER BY "artists"."name" desc LIMIT 30 OFFSET 0
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (93.8ms)
+Completed 200 OK in 102ms (Views: 99.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/artists/14/edit" for ::1 at 2018-03-05 20:57:11 -0500
+Processing by Admin::ArtistsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "14"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (93.9ms)
+Completed 200 OK in 104ms (Views: 102.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/artists/16/edit" for ::1 at 2018-03-05 20:57:16 -0500
+Processing by Admin::ArtistsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "16"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (76.6ms)
+Completed 200 OK in 84ms (Views: 82.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/songs" for ::1 at 2018-03-05 20:57:18 -0500
+Processing by Admin::SongsController#index as HTML
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (115.5ms)
+Completed 200 OK in 127ms (Views: 121.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/songs/32/edit" for ::1 at 2018-03-05 20:57:21 -0500
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "32"]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (92.5ms)
+Completed 200 OK in 100ms (Views: 97.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/songs/32/edit" for ::1 at 2018-03-05 20:58:39 -0500
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "32"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (95.4ms)
+Completed 401 Unauthorized in 125ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `name' for #<Song:0x00007fd5b92c2e50>):
+    1: insert_tag renderer_for(:edit)
+  app/admin/songs.rb:7:in `block (3 levels) in <top (required)>'
+  app/admin/songs.rb:6:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.1ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.1ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.2ms)
+
+
+Started GET "/admin/songs/32/edit" for ::1 at 2018-03-05 21:02:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "32"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (402.8ms)
+Completed 401 Unauthorized in 458ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `name' for #<Song:0x00007fceb928db58>):
+    1: insert_tag renderer_for(:edit)
+  app/admin/songs.rb:7:in `block (3 levels) in <top (required)>'
+  app/admin/songs.rb:6:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.6ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (103.3ms)
+
+
+Started GET "/admin/songs" for ::1 at 2018-03-05 21:02:18 -0500
+Processing by Admin::SongsController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/index.html.arb (110.7ms)
+Completed 200 OK in 121ms (Views: 116.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/songs/32" for ::1 at 2018-03-05 21:02:51 -0500
+Processing by Admin::SongsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32[0m  [["resource_type", "Song"], ["namespace", "admin"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32 LIMIT 25 OFFSET 0) subquery_for_count  [["resource_type", "Song"], ["namespace", "admin"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/show.html.arb (107.3ms)
+Completed 200 OK in 118ms (Views: 114.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/songs/32" for ::1 at 2018-03-05 21:03:00 -0500
+Processing by Admin::SongsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32  [["resource_type", "Song"], ["namespace", "admin"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32 LIMIT 25 OFFSET 0) subquery_for_count[0m  [["resource_type", "Song"], ["namespace", "admin"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/show.html.arb (87.9ms)
+Completed 200 OK in 96ms (Views: 93.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/artists/16" for ::1 at 2018-03-05 21:03:05 -0500
+Processing by Admin::ArtistsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 16  [["resource_type", "Artist"], ["namespace", "admin"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 16 LIMIT 25 OFFSET 0) subquery_for_count[0m  [["resource_type", "Artist"], ["namespace", "admin"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/show.html.arb (86.8ms)
+Completed 200 OK in 97ms (Views: 95.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/artists/16" for ::1 at 2018-03-05 21:03:19 -0500
+Processing by Admin::ArtistsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 16  [["resource_type", "Artist"], ["namespace", "admin"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 16 LIMIT 25 OFFSET 0) subquery_for_count[0m  [["resource_type", "Artist"], ["namespace", "admin"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/show.html.arb (81.5ms)
+Completed 200 OK in 88ms (Views: 86.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/artists/16" for ::1 at 2018-03-05 21:03:20 -0500
+Processing by Admin::ArtistsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 16  [["resource_type", "Artist"], ["namespace", "admin"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 16 LIMIT 25 OFFSET 0) subquery_for_count[0m  [["resource_type", "Artist"], ["namespace", "admin"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/show.html.arb (88.6ms)
+Completed 200 OK in 96ms (Views: 93.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/songs/32" for ::1 at 2018-03-05 21:03:26 -0500
+Processing by Admin::SongsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32[0m  [["resource_type", "Song"], ["namespace", "admin"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32 LIMIT 25 OFFSET 0) subquery_for_count  [["resource_type", "Song"], ["namespace", "admin"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/show.html.arb (90.8ms)
+Completed 200 OK in 98ms (Views: 96.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/songs/32/edit" for ::1 at 2018-03-05 21:05:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (1.7ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "32"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (396.9ms)
+Completed 401 Unauthorized in 453ms (ActiveRecord: 2.3ms)
+
+ActionView::Template::Error (undefined method `name' for #<Song:0x00007f859613dcb0>):
+    1: insert_tag renderer_for(:edit)
+  app/admin/songs.rb:7:in `block (3 levels) in <top (required)>'
+  app/admin/songs.rb:6:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.9ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.0ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.1ms)
+
+
+Started GET "/admin/songs/32" for ::1 at 2018-03-05 21:06:05 -0500
+Processing by Admin::SongsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32  [["resource_type", "Song"], ["namespace", "admin"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 32 LIMIT 25 OFFSET 0) subquery_for_count[0m  [["resource_type", "Song"], ["namespace", "admin"]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/show.html.arb (113.1ms)
+Completed 200 OK in 139ms (Views: 121.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/songs/31/edit" for ::1 at 2018-03-05 21:06:10 -0500
+Processing by Admin::SongsController#edit as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "31"]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered /Users/preston.marshall/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/bundler/gems/activeadmin-5cedfe576b62/app/views/active_admin/resource/edit.html.arb (92.0ms)
+Completed 200 OK in 99ms (Views: 97.7ms | ActiveRecord: 0.4ms)
