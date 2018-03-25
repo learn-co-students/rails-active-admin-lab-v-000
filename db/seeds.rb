@@ -21,3 +21,4 @@ songs = [{artist_name: "The Killers", title: "Mr. Brightside"},
 songs.each do |song|
   Song.create(song)
 end
+AdminUser.create!(email: 'chris@home.com', password: 'alexkali', password_confirmation: 'alexkali') if Rails.env.development?
