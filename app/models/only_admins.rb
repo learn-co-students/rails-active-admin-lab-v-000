@@ -1,4 +1,4 @@
-class OnlyAdminsAuthorization < ActiveAdmin::AuthorizationAdapter
+class OnlyAdmins < ActiveAdmin::AuthorizationAdapter
 
    # def authorized?(action, subject = nil)
    #  case subject
