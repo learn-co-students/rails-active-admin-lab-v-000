@@ -5255,3 +5255,10 @@ Processing by Admin::SongsController#show as HTML
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 17 LIMIT 25 OFFSET 0) subquery_for_count[0m  [["resource_type", "Song"], ["namespace", "admin"]]
   Rendered /Users/chris/.rvm/gems/ruby-2.2.3/bundler/gems/activeadmin-2cf85fb03ab3/app/views/active_admin/resource/show.html.arb (163.5ms)
 Completed 200 OK in 179ms (Views: 175.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/artists" for ::1 at 2018-03-25 13:35:44 -0400
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (1.6ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered artists/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 7379860ms (Views: 62.7ms | ActiveRecord: 1.9ms)
