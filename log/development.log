@@ -2851,3 +2851,24 @@ Processing by Admin::AdminUsersController#index as HTML
   [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
   Rendered /Users/samojling/.rvm/gems/ruby-2.3.1/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb (102.7ms)
 Completed 200 OK in 115ms (Views: 112.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/admin_users/1" for ::1 at 2018-04-06 11:13:15 +0200
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 1  [["resource_type", "AdminUser"], ["namespace", "admin"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."namespace" = ? AND "active_admin_comments"."resource_id" = 1 LIMIT 25 OFFSET 0) subquery_for_count[0m  [["resource_type", "AdminUser"], ["namespace", "admin"]]
+  Rendered /Users/samojling/.rvm/gems/ruby-2.3.1/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/show.html.arb (118.4ms)
+Completed 200 OK in 150ms (Views: 130.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/admin_users/1/edit" for ::1 at 2018-04-06 11:13:21 +0200
+Processing by Admin::AdminUsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered /Users/samojling/.rvm/gems/ruby-2.3.1/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/edit.html.arb (110.5ms)
+Completed 200 OK in 123ms (Views: 121.4ms | ActiveRecord: 0.2ms)
