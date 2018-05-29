@@ -15,7 +15,8 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+gem 'activeadmin', github: 'activeadmin'
+
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
